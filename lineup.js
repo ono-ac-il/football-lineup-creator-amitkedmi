@@ -12,3 +12,15 @@ const players = [
     { name: 'Buffon', position: 'goalkeeper' },
     { name: 'Casillas', position: 'goalkeeper' }
 ]
+/*filter all the goalkeeper from players array */
+const goalkeeper = players.filter(function(player){
+    return player.position == "goalkeeper";   
+})
+
+const mappedGoalkeepers = goalkeeper.map(function(item){
+    return `<option value="${item.name}">${item.name}</option>`
+});
+
+document.getElementById('pos1').innerHTML = mappedGoalkeepers.join('');
+
+
